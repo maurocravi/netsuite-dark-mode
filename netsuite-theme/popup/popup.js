@@ -204,26 +204,36 @@
 
     list.querySelectorAll('[data-action="load"]').forEach((btn) => {
       btn.addEventListener('click', async () => {
-        const name = btn.dataset.name;
-        const theme = await loadTheme();
-        const profile = theme.profiles?.[name];
-        if (!profile) return;
-        const merged = { ...theme, ...profile, profiles: theme.profiles };
-        setInputsFromTheme(merged);
-        await saveTheme(merged);
-        setStatus(`Perfil "${name}" cargado`, 'success');
+        try {
+          const name = btn.dataset.name;
+          const theme = await loadTheme();
+          const profile = theme.profiles?.[name];
+          if (!profile) return;
+          const merged = { ...theme, ...profile, profiles: theme.profiles };
+          setInputsFromTheme(merged);
+          await saveTheme(merged);
+          setStatus(`Perfil "${name}" cargado`, 'success');
+        } catch (err) {
+          setStatus('Error al cargar perfil: ' + err.message, 'error');
+          console.error('[NetSuite Theme] load profile error:', err);
+        }
       });
     });
 
     list.querySelectorAll('[data-action="delete"]').forEach((btn) => {
       btn.addEventListener('click', async () => {
-        const name = btn.dataset.name;
-        const theme = await loadTheme();
-        if (theme.profiles) {
-          delete theme.profiles[name];
-          await saveTheme(theme);
-          renderProfiles(theme);
-          setStatus(`Perfil "${name}" eliminado`, 'success');
+        try {
+          const name = btn.dataset.name;
+          const theme = await loadTheme();
+          if (theme.profiles) {
+            delete theme.profiles[name];
+            await saveTheme(theme);
+            renderProfiles(theme);
+            setStatus(`Perfil "${name}" eliminado`, 'success');
+          }
+        } catch (err) {
+          setStatus('Error al eliminar perfil: ' + err.message, 'error');
+          console.error('[NetSuite Theme] delete profile error:', err);
         }
       });
     });
@@ -252,9 +262,14 @@
   }
 
   async function onChange() {
-    const theme = await loadTheme();
-    const updated = mergeInputsIntoTheme(theme);
-    await saveTheme(updated);
+    try {
+      const theme = await loadTheme();
+      const updated = mergeInputsIntoTheme(theme);
+      await saveTheme(updated);
+    } catch (err) {
+      setStatus('Error al guardar: ' + err.message, 'error');
+      console.error('[NetSuite Theme] save error:', err);
+    }
   }
 
   async function init() {
@@ -279,46 +294,56 @@
 
     // Botón tema oscuro predefinido
     document.getElementById('btn-dark-preset').addEventListener('click', async () => {
-      const theme = await loadTheme();
-      const updated = { ...theme, ...DARK_PRESET, enabled: true };
-      setInputsFromTheme(updated);
-      await saveTheme(updated);
-      setStatus('Tema oscuro aplicado', 'success');
+      try {
+        const theme = await loadTheme();
+        const updated = { ...theme, ...DARK_PRESET, enabled: true };
+        setInputsFromTheme(updated);
+        await saveTheme(updated);
+        setStatus('Tema oscuro aplicado', 'success');
+      } catch (err) {
+        setStatus('Error al aplicar tema: ' + err.message, 'error');
+        console.error('[NetSuite Theme] preset error:', err);
+      }
     });
 
     // Guardar perfil
     document.getElementById('btn-save-profile').addEventListener('click', async () => {
-      const nameInput = document.getElementById('profile-name');
-      const name = nameInput.value.trim();
-      if (!name) {
-        setStatus('Escribe un nombre para el perfil', 'error');
-        return;
+      try {
+        const nameInput = document.getElementById('profile-name');
+        const name = nameInput.value.trim();
+        if (!name) {
+          setStatus('Escribe un nombre para el perfil', 'error');
+          return;
+        }
+        const theme = await loadTheme();
+        const current = getThemeFromInputs();
+        const profile = {
+          enabled: current.enabled,
+          bg: current.bg,
+          text: current.text,
+          textMuted: current.textMuted,
+          cardBg: current.cardBg,
+          cardBorder: current.cardBorder,
+          inputBg: current.inputBg,
+          inputBorder: current.inputBorder,
+          accent: current.accent,
+          accentHover: current.accentHover,
+          danger: current.danger,
+          success: current.success,
+          fontSize: current.fontSize,
+          sidebarSaturation: current.sidebarSaturation,
+          highContrast: current.highContrast
+        };
+        theme.profiles = theme.profiles || {};
+        theme.profiles[name] = profile;
+        await saveTheme(theme);
+        nameInput.value = '';
+        renderProfiles(theme);
+        setStatus(`Perfil "${name}" guardado`, 'success');
+      } catch (err) {
+        setStatus('Error al guardar perfil: ' + err.message, 'error');
+        console.error('[NetSuite Theme] save profile error:', err);
       }
-      const theme = await loadTheme();
-      const current = getThemeFromInputs();
-      const profile = {
-        enabled: current.enabled,
-        bg: current.bg,
-        text: current.text,
-        textMuted: current.textMuted,
-        cardBg: current.cardBg,
-        cardBorder: current.cardBorder,
-        inputBg: current.inputBg,
-        inputBorder: current.inputBorder,
-        accent: current.accent,
-        accentHover: current.accentHover,
-        danger: current.danger,
-        success: current.success,
-        fontSize: current.fontSize,
-        sidebarSaturation: current.sidebarSaturation,
-        highContrast: current.highContrast
-      };
-      theme.profiles = theme.profiles || {};
-      theme.profiles[name] = profile;
-      await saveTheme(theme);
-      nameInput.value = '';
-      renderProfiles(theme);
-      setStatus(`Perfil "${name}" guardado`, 'success');
     });
 
     // Exportar

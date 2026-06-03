@@ -25,6 +25,8 @@
     sidebarSaturation: 1,
     highContrast: false,
     profiles: {},
+    // autoDark está reservado para uso futuro; el popup no lo expone aún.
+    // Si se agrega UI, leer los valores de inputs reales en getThemeFromInputs().
     autoDark: false,
     autoDarkStart: '18:00',
     autoDarkEnd: '06:00'
@@ -63,6 +65,8 @@
     }
   }
 
+  // Solo lee lo que la UI controla. Campos como profiles o autoDark
+  // deben venir del storage base vía mergeInputsIntoTheme().
   function getThemeFromInputs() {
     return {
       enabled: document.getElementById('toggle-enabled').checked,

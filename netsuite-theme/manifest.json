@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "NetSuite Theme Studio",
+  "version": "1.0.0",
+  "description": "Personaliza el estilo visual de NetSuite con temas oscuros, colores personalizables y más.",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["*://*.netsuite.com/*", "*://*.app.netsuite.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["*://*.netsuite.com/*", "*://*.app.netsuite.com/*"],
+      "js": ["content.js"],
+      "css": ["themes/variables.css"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  }
+}

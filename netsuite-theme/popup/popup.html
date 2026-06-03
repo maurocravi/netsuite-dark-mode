@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NetSuite Theme Studio</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-brand">
+        <div class="header-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="header-title">NetSuite Theme Studio</h1>
+          <p class="header-subtitle">Personaliza tu experiencia</p>
+        </div>
+      </div>
+      <label class="toggle toggle-lg">
+        <input type="checkbox" id="toggle-enabled" />
+        <span class="toggle-slider"></span>
+      </label>
+    </header>
+
+    <!-- Quick Actions -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Acciones rápidas</h2>
+      </div>
+      <div class="quick-actions">
+        <button class="btn btn-primary btn-full" id="btn-dark-preset">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          Tema oscuro predefinido
+        </button>
+      </div>
+    </section>
+
+    <!-- Colors -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Colores</h2>
+      </div>
+      <div class="color-grid">
+        <div class="color-field">
+          <label class="color-label" for="color-bg">Fondo</label>
+          <div class="color-input-wrap">
+            <input type="color" id="color-bg" class="color-picker" value="#0c0c0e" />
+            <input type="text" id="text-bg" class="color-text" value="#0c0c0e" maxlength="7" />
+          </div>
+        </div>
+        <div class="color-field">
+          <label class="color-label" for="color-text">Texto</label>
+          <div class="color-input-wrap">
+            <input type="color" id="color-text" class="color-picker" value="#e5e5e5" />
+            <input type="text" id="text-text" class="color-text" value="#e5e5e5" maxlength="7" />
+          </div>
+        </div>
+        <div class="color-field">
+          <label class="color-label" for="color-accent">Acento</label>
+          <div class="color-input-wrap">
+            <input type="color" id="color-accent" class="color-picker" value="#6366f1" />
+            <input type="text" id="text-accent" class="color-text" value="#6366f1" maxlength="7" />
+          </div>
+        </div>
+        <div class="color-field">
+          <label class="color-label" for="color-card">Tarjetas</label>
+          <div class="color-input-wrap">
+            <input type="color" id="color-card" class="color-picker" value="#141416" />
+            <input type="text" id="text-card" class="color-text" value="#141416" maxlength="7" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Typography -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Tipografía</h2>
+      </div>
+      <div class="field">
+        <label class="field-label" for="range-fontsize">Tamaño de fuente: <span id="val-fontsize">14px</span></label>
+        <input type="range" id="range-fontsize" class="range" min="12" max="20" step="1" value="14" />
+        <div class="range-hints">
+          <span>12px</span>
+          <span>20px</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accessibility -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Accesibilidad</h2>
+      </div>
+      <div class="switch-list">
+        <label class="switch-row">
+          <span class="switch-label">Alto contraste</span>
+          <input type="checkbox" id="toggle-highcontrast" class="switch-input" />
+          <span class="switch-slider"></span>
+        </label>
+        <label class="switch-row">
+          <span class="switch-label">Reducir saturación sidebar</span>
+          <input type="checkbox" id="toggle-sidebar-sat" class="switch-input" />
+          <span class="switch-slider"></span>
+        </label>
+      </div>
+    </section>
+
+    <!-- Profiles -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Perfiles</h2>
+      </div>
+      <div class="profile-save">
+        <input type="text" id="profile-name" class="input" placeholder="Nombre del perfil…" maxlength="30" />
+        <button class="btn btn-primary" id="btn-save-profile">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+            <polyline points="17 21 17 13 7 13 7 21"/>
+            <polyline points="7 3 7 8 15 8"/>
+          </svg>
+          Guardar
+        </button>
+      </div>
+      <div class="profile-list" id="profile-list"></div>
+    </section>
+
+    <!-- Export / Import -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Backup</h2>
+      </div>
+      <div class="btn-group">
+        <button class="btn btn-secondary btn-full" id="btn-export">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Exportar
+        </button>
+        <button class="btn btn-secondary btn-full" id="btn-import">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="17 8 12 3 7 8"/>
+            <line x1="12" y1="3" x2="12" y2="15"/>
+          </svg>
+          Importar
+        </button>
+      </div>
+      <input type="file" id="import-file" accept=".json" style="display:none" />
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span id="status-msg">Listo</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+/* NetSuite Theme Studio — Variables CSS base */
+/* Este archivo se inyecta antes de que cargue la página para evitar FOUC */
+
+:root {
+  --ns-bg: #0c0c0e;
+  --ns-text: #e5e5e5;
+  --ns-text-muted: #737373;
+  --ns-card-bg: #141416;
+  --ns-card-border: #1e1e22;
+  --ns-input-bg: #1a1a1e;
+  --ns-input-border: #2a2a30;
+  --ns-accent: #6366f1;
+  --ns-accent-hover: #818cf8;
+  --ns-danger: #ef4444;
+  --ns-success: #10b981;
+  --ns-font-size: 14px;
+  --ns-sidebar-saturation: 1;
+  --ns-high-contrast: 0;
+  --ns-enabled: 0;
+}

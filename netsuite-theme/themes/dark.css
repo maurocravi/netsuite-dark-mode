@@ -1,0 +1,787 @@
+/* ============================================================
+   NetSuite Theme Studio — Tema Oscuro
+   ============================================================ */
+
+/* Solo aplicar cuando la extensión está activada */
+html[data-netsuite-theme="enabled"],
+html[data-netsuite-theme="enabled"] body {
+  background-color: var(--ns-bg) !important;
+  color: var(--ns-text) !important;
+  font-size: var(--ns-font-size) !important;
+}
+
+/* ============================================================
+   FONDOS GENERALES
+   ============================================================ */
+html[data-netsuite-theme="enabled"] #body,
+html[data-netsuite-theme="enabled"] .uir-page-background,
+html[data-netsuite-theme="enabled"] .nlb-page-background,
+html[data-netsuite-theme="enabled"] .ns-panel,
+html[data-netsuite-theme="enabled"] .ns-widget,
+html[data-netsuite-theme="enabled"] .ns-widget-content,
+html[data-netsuite-theme="enabled"] .ns-portlet,
+html[data-netsuite-theme="enabled"] .ns-portlet-content,
+html[data-netsuite-theme="enabled"] .ns-list-row,
+html[data-netsuite-theme="enabled"] .ns-list-cell,
+html[data-netsuite-theme="enabled"] .ns-form-background,
+html[data-netsuite-theme="enabled"] .ns-modal-background,
+html[data-netsuite-theme="enabled"] .ns-dialog-background,
+html[data-netsuite-theme="enabled"] .ns-menu-background,
+html[data-netsuite-theme="enabled"] .ns-dropdown-background,
+html[data-netsuite-theme="enabled"] .ns-tab-background,
+html[data-netsuite-theme="enabled"] .ns-panel-content,
+html[data-netsuite-theme="enabled"] .ns-widget-panel,
+html[data-netsuite-theme="enabled"] .ns-dashboard-panel,
+html[data-netsuite-theme="enabled"] .ns-home-panel,
+html[data-netsuite-theme="enabled"] #div__header,
+html[data-netsuite-theme="enabled"] #div__body,
+html[data-netsuite-theme="enabled"] #div__footer,
+html[data-netsuite-theme="enabled"] .uir-list-row,
+html[data-netsuite-theme="enabled"] .uir-list-cell,
+html[data-netsuite-theme="enabled"] .uir-record-type,
+html[data-netsuite-theme="enabled"] .uir-field,
+html[data-netsuite-theme="enabled"] .uir-field-value,
+html[data-netsuite-theme="enabled"] .uir-form-row,
+html[data-netsuite-theme="enabled"] .uir-form-section,
+html[data-netsuite-theme="enabled"] .uir-tab,
+html[data-netsuite-theme="enabled"] .uir-tab-content,
+html[data-netsuite-theme="enabled"] .uir-tab-selected,
+html[data-netsuite-theme="enabled"] .uir-tabs-background,
+html[data-netsuite-theme="enabled"] .uir-tabs-container,
+html[data-netsuite-theme="enabled"] .uir-header,
+html[data-netsuite-theme="enabled"] .uir-subheader,
+html[data-netsuite-theme="enabled"] .uir-title,
+html[data-netsuite-theme="enabled"] .uir-section-title,
+html[data-netsuite-theme="enabled"] .uir-field-label,
+html[data-netsuite-theme="enabled"] .uir-field-value,
+html[data-netsuite-theme="enabled"] .uir-text,
+html[data-netsuite-theme="enabled"] .uir-label,
+html[data-netsuite-theme="enabled"] .uir-value,
+html[data-netsuite-theme="enabled"] .uir-data,
+html[data-netsuite-theme="enabled"] .uir-row,
+html[data-netsuite-theme="enabled"] .uir-table,
+html[data-netsuite-theme="enabled"] .uir-table-row,
+html[data-netsuite-theme="enabled"] .uir-table-cell,
+html[data-netsuite-theme="enabled"] .uir-list-edit-row,
+html[data-netsuite-theme="enabled"] .uir-list-edit-cell,
+html[data-netsuite-theme="enabled"] .uir-machine-row,
+html[data-netsuite-theme="enabled"] .uir-machine-cell,
+html[data-netsuite-theme="enabled"] .uir-sublist,
+html[data-netsuite-theme="enabled"] .uir-sublist-header,
+html[data-netsuite-theme="enabled"] .uir-sublist-row,
+html[data-netsuite-theme="enabled"] .uir-sublist-cell,
+html[data-netsuite-theme="enabled"] .uir-addedit-header,
+html[data-netsuite-theme="enabled"] .uir-addedit-row,
+html[data-netsuite-theme="enabled"] .uir-addedit-cell,
+html[data-netsuite-theme="enabled"] .uir-search-row,
+html[data-netsuite-theme="enabled"] .uir-search-cell,
+html[data-netsuite-theme="enabled"] .uir-quick-add-row,
+html[data-netsuite-theme="enabled"] .uir-quick-add-cell,
+html[data-netsuite-theme="enabled"] .ns-portlet-header,
+html[data-netsuite-theme="enabled"] .ns-portlet-body,
+html[data-netsuite-theme="enabled"] .ns-portlet-footer,
+html[data-netsuite-theme="enabled"] .ns-widget-header,
+html[data-netsuite-theme="enabled"] .ns-widget-body,
+html[data-netsuite-theme="enabled"] .ns-widget-footer,
+html[data-netsuite-theme="enabled"] .ns-chart-background,
+html[data-netsuite-theme="enabled"] .ns-graph-background,
+html[data-netsuite-theme="enabled"] .ns-kpi-background,
+html[data-netsuite-theme="enabled"] .ns-calendar-background,
+html[data-netsuite-theme="enabled"] .ns-gantt-background,
+html[data-netsuite-theme="enabled"] .ns-timeline-background,
+html[data-netsuite-theme="enabled"] .ns-report-background,
+html[data-netsuite-theme="enabled"] .ns-search-background,
+html[data-netsuite-theme="enabled"] .ns-filter-background,
+html[data-netsuite-theme="enabled"] .ns-sort-background,
+html[data-netsuite-theme="enabled"] .ns-pagination-background,
+html[data-netsuite-theme="enabled"] .ns-breadcrumb-background,
+html[data-netsuite-theme="enabled"] .ns-toolbar-background,
+html[data-netsuite-theme="enabled"] .ns-actionbar-background,
+html[data-netsuite-theme="enabled"] .ns-menubar-background,
+html[data-netsuite-theme="enabled"] .ns-sidebar-background,
+html[data-netsuite-theme="enabled"] .ns-nav-background,
+html[data-netsuite-theme="enabled"] .ns-nav-item,
+html[data-netsuite-theme="enabled"] .ns-nav-item-active,
+html[data-netsuite-theme="enabled"] .ns-nav-item-hover,
+html[data-netsuite-theme="enabled"] .ns-nav-item-selected,
+html[data-netsuite-theme="enabled"] .ns-nav-item-focused,
+html[data-netsuite-theme="enabled"] .ns-nav-item-disabled,
+html[data-netsuite-theme="enabled"] .ns-nav-item-link,
+html[data-netsuite-theme="enabled"] .ns-nav-item-text,
+html[data-netsuite-theme="enabled"] .ns-nav-item-icon,
+html[data-netsuite-theme="enabled"] .ns-nav-item-badge,
+html[data-netsuite-theme="enabled"] .ns-nav-item-arrow,
+html[data-netsuite-theme="enabled"] .ns-nav-item-separator,
+html[data-netsuite-theme="enabled"] .ns-nav-item-group,
+html[data-netsuite-theme="enabled"] .ns-nav-item-group-title,
+html[data-netsuite-theme="enabled"] .ns-nav-item-group-content,
+html[data-netsuite-theme="enabled"] .ns-nav-item-group-header,
+html[data-netsuite-theme="enabled"] .ns-nav-item-group-footer,
+html[data-netsuite-theme="enabled"] .ns-nav-item-group-separator,
+html[data-netsuite-theme="enabled"] .ns-nav-item-group-item,
+html[data-netsuite-theme="enabled"] .ns-nav-item-group-item-active,
+html[data-netsuite-theme="enabled"] .ns-nav-item-group-item-hover,
+html[data-netsuite-theme="enabled"] .ns-nav-item-group-item-selected,
+html[data-netsuite-theme="enabled"] .ns-nav-item-group-item-focused,
+html[data-netsuite-theme="enabled"] .ns-nav-item-group-item-disabled,
+html[data-netsuite-theme="enabled"] .ns-nav-item-group-item-link,
+html[data-netsuite-theme="enabled"] .ns-nav-item-group-item-text,
+html[data-netsuite-theme="enabled"] .ns-nav-item-group-item-icon,
+html[data-netsuite-theme="enabled"] .ns-nav-item-group-item-badge,
+html[data-netsuite-theme="enabled"] .ns-nav-item-group-item-arrow,
+html[data-netsuite-theme="enabled"] .ns-nav-item-group-item-separator {
+  background-color: var(--ns-bg) !important;
+  color: var(--ns-text) !important;
+}
+
+/* ============================================================
+   SIDEBAR / NAVEGACIÓN IZQUIERDA
+   ============================================================ */
+html[data-netsuite-theme="enabled"] .ns-sidebar,
+html[data-netsuite-theme="enabled"] .ns-nav,
+html[data-netsuite-theme="enabled"] .ns-nav-panel,
+html[data-netsuite-theme="enabled"] .ns-nav-menu,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-active,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-hover,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-selected,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-focused,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-disabled,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-link,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-text,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-icon,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-badge,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-arrow,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-separator,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-group,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-group-title,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-group-content,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-group-header,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-group-footer,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-group-separator,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-group-item,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-group-item-active,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-group-item-hover,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-group-item-selected,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-group-item-focused,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-group-item-disabled,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-group-item-link,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-group-item-text,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-group-item-icon,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-group-item-badge,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-group-item-arrow,
+html[data-netsuite-theme="enabled"] .ns-nav-menu-item-group-item-separator {
+  background-color: var(--ns-card-bg) !important;
+  color: var(--ns-text) !important;
+  border-color: var(--ns-card-border) !important;
+  filter: saturate(var(--ns-sidebar-saturation)) !important;
+}
+
+/* ============================================================
+   TARJETAS / PANELES / MODALES
+   ============================================================ */
+html[data-netsuite-theme="enabled"] .ns-card,
+html[data-netsuite-theme="enabled"] .ns-card-content,
+html[data-netsuite-theme="enabled"] .ns-card-header,
+html[data-netsuite-theme="enabled"] .ns-card-footer,
+html[data-netsuite-theme="enabled"] .ns-card-body,
+html[data-netsuite-theme="enabled"] .ns-card-title,
+html[data-netsuite-theme="enabled"] .ns-card-subtitle,
+html[data-netsuite-theme="enabled"] .ns-card-description,
+html[data-netsuite-theme="enabled"] .ns-card-action,
+html[data-netsuite-theme="enabled"] .ns-card-action-icon,
+html[data-netsuite-theme="enabled"] .ns-card-action-text,
+html[data-netsuite-theme="enabled"] .ns-card-action-badge,
+html[data-netsuite-theme="enabled"] .ns-card-action-arrow,
+html[data-netsuite-theme="enabled"] .ns-card-action-separator,
+html[data-netsuite-theme="enabled"] .ns-card-action-group,
+html[data-netsuite-theme="enabled"] .ns-card-action-group-title,
+html[data-netsuite-theme="enabled"] .ns-card-action-group-content,
+html[data-netsuite-theme="enabled"] .ns-card-action-group-header,
+html[data-netsuite-theme="enabled"] .ns-card-action-group-footer,
+html[data-netsuite-theme="enabled"] .ns-card-action-group-separator,
+html[data-netsuite-theme="enabled"] .ns-card-action-group-item,
+html[data-netsuite-theme="enabled"] .ns-card-action-group-item-active,
+html[data-netsuite-theme="enabled"] .ns-card-action-group-item-hover,
+html[data-netsuite-theme="enabled"] .ns-card-action-group-item-selected,
+html[data-netsuite-theme="enabled"] .ns-card-action-group-item-focused,
+html[data-netsuite-theme="enabled"] .ns-card-action-group-item-disabled,
+html[data-netsuite-theme="enabled"] .ns-modal,
+html[data-netsuite-theme="enabled"] .ns-modal-content,
+html[data-netsuite-theme="enabled"] .ns-modal-header,
+html[data-netsuite-theme="enabled"] .ns-modal-footer,
+html[data-netsuite-theme="enabled"] .ns-modal-body,
+html[data-netsuite-theme="enabled"] .ns-modal-title,
+html[data-netsuite-theme="enabled"] .ns-modal-subtitle,
+html[data-netsuite-theme="enabled"] .ns-modal-description,
+html[data-netsuite-theme="enabled"] .ns-modal-action,
+html[data-netsuite-theme="enabled"] .ns-modal-action-icon,
+html[data-netsuite-theme="enabled"] .ns-modal-action-text,
+html[data-netsuite-theme="enabled"] .ns-modal-action-badge,
+html[data-netsuite-theme="enabled"] .ns-modal-action-arrow,
+html[data-netsuite-theme="enabled"] .ns-modal-action-separator,
+html[data-netsuite-theme="enabled"] .ns-modal-action-group,
+html[data-netsuite-theme="enabled"] .ns-modal-action-group-title,
+html[data-netsuite-theme="enabled"] .ns-modal-action-group-content,
+html[data-netsuite-theme="enabled"] .ns-modal-action-group-header,
+html[data-netsuite-theme="enabled"] .ns-modal-action-group-footer,
+html[data-netsuite-theme="enabled"] .ns-modal-action-group-separator,
+html[data-netsuite-theme="enabled"] .ns-modal-action-group-item,
+html[data-netsuite-theme="enabled"] .ns-modal-action-group-item-active,
+html[data-netsuite-theme="enabled"] .ns-modal-action-group-item-hover,
+html[data-netsuite-theme="enabled"] .ns-modal-action-group-item-selected,
+html[data-netsuite-theme="enabled"] .ns-modal-action-group-item-focused,
+html[data-netsuite-theme="enabled"] .ns-modal-action-group-item-disabled,
+html[data-netsuite-theme="enabled"] .ns-dialog,
+html[data-netsuite-theme="enabled"] .ns-dialog-content,
+html[data-netsuite-theme="enabled"] .ns-dialog-header,
+html[data-netsuite-theme="enabled"] .ns-dialog-footer,
+html[data-netsuite-theme="enabled"] .ns-dialog-body,
+html[data-netsuite-theme="enabled"] .ns-dialog-title,
+html[data-netsuite-theme="enabled"] .ns-dialog-subtitle,
+html[data-netsuite-theme="enabled"] .ns-dialog-description,
+html[data-netsuite-theme="enabled"] .ns-dialog-action,
+html[data-netsuite-theme="enabled"] .ns-dialog-action-icon,
+html[data-netsuite-theme="enabled"] .ns-dialog-action-text,
+html[data-netsuite-theme="enabled"] .ns-dialog-action-badge,
+html[data-netsuite-theme="enabled"] .ns-dialog-action-arrow,
+html[data-netsuite-theme="enabled"] .ns-dialog-action-separator,
+html[data-netsuite-theme="enabled"] .ns-dialog-action-group,
+html[data-netsuite-theme="enabled"] .ns-dialog-action-group-title,
+html[data-netsuite-theme="enabled"] .ns-dialog-action-group-content,
+html[data-netsuite-theme="enabled"] .ns-dialog-action-group-header,
+html[data-netsuite-theme="enabled"] .ns-dialog-action-group-footer,
+html[data-netsuite-theme="enabled"] .ns-dialog-action-group-separator,
+html[data-netsuite-theme="enabled"] .ns-dialog-action-group-item,
+html[data-netsuite-theme="enabled"] .ns-dialog-action-group-item-active,
+html[data-netsuite-theme="enabled"] .ns-dialog-action-group-item-hover,
+html[data-netsuite-theme="enabled"] .ns-dialog-action-group-item-selected,
+html[data-netsuite-theme="enabled"] .ns-dialog-action-group-item-focused,
+html[data-netsuite-theme="enabled"] .ns-dialog-action-group-item-disabled,
+html[data-netsuite-theme="enabled"] .ns-panel-header,
+html[data-netsuite-theme="enabled"] .ns-panel-footer,
+html[data-netsuite-theme="enabled"] .ns-panel-body,
+html[data-netsuite-theme="enabled"] .ns-panel-title,
+html[data-netsuite-theme="enabled"] .ns-panel-subtitle,
+html[data-netsuite-theme="enabled"] .ns-panel-description,
+html[data-netsuite-theme="enabled"] .ns-panel-action,
+html[data-netsuite-theme="enabled"] .ns-panel-action-icon,
+html[data-netsuite-theme="enabled"] .ns-panel-action-text,
+html[data-netsuite-theme="enabled"] .ns-panel-action-badge,
+html[data-netsuite-theme="enabled"] .ns-panel-action-arrow,
+html[data-netsuite-theme="enabled"] .ns-panel-action-separator,
+html[data-netsuite-theme="enabled"] .ns-panel-action-group,
+html[data-netsuite-theme="enabled"] .ns-panel-action-group-title,
+html[data-netsuite-theme="enabled"] .ns-panel-action-group-content,
+html[data-netsuite-theme="enabled"] .ns-panel-action-group-header,
+html[data-netsuite-theme="enabled"] .ns-panel-action-group-footer,
+html[data-netsuite-theme="enabled"] .ns-panel-action-group-separator,
+html[data-netsuite-theme="enabled"] .ns-panel-action-group-item,
+html[data-netsuite-theme="enabled"] .ns-panel-action-group-item-active,
+html[data-netsuite-theme="enabled"] .ns-panel-action-group-item-hover,
+html[data-netsuite-theme="enabled"] .ns-panel-action-group-item-selected,
+html[data-netsuite-theme="enabled"] .ns-panel-action-group-item-focused,
+html[data-netsuite-theme="enabled"] .ns-panel-action-group-item-disabled,
+html[data-netsuite-theme="enabled"] .ns-widget-header,
+html[data-netsuite-theme="enabled"] .ns-widget-footer,
+html[data-netsuite-theme="enabled"] .ns-widget-body,
+html[data-netsuite-theme="enabled"] .ns-widget-title,
+html[data-netsuite-theme="enabled"] .ns-widget-subtitle,
+html[data-netsuite-theme="enabled"] .ns-widget-description,
+html[data-netsuite-theme="enabled"] .ns-widget-action,
+html[data-netsuite-theme="enabled"] .ns-widget-action-icon,
+html[data-netsuite-theme="enabled"] .ns-widget-action-text,
+html[data-netsuite-theme="enabled"] .ns-widget-action-badge,
+html[data-netsuite-theme="enabled"] .ns-widget-action-arrow,
+html[data-netsuite-theme="enabled"] .ns-widget-action-separator,
+html[data-netsuite-theme="enabled"] .ns-widget-action-group,
+html[data-netsuite-theme="enabled"] .ns-widget-action-group-title,
+html[data-netsuite-theme="enabled"] .ns-widget-action-group-content,
+html[data-netsuite-theme="enabled"] .ns-widget-action-group-header,
+html[data-netsuite-theme="enabled"] .ns-widget-action-group-footer,
+html[data-netsuite-theme="enabled"] .ns-widget-action-group-separator,
+html[data-netsuite-theme="enabled"] .ns-widget-action-group-item,
+html[data-netsuite-theme="enabled"] .ns-widget-action-group-item-active,
+html[data-netsuite-theme="enabled"] .ns-widget-action-group-item-hover,
+html[data-netsuite-theme="enabled"] .ns-widget-action-group-item-selected,
+html[data-netsuite-theme="enabled"] .ns-widget-action-group-item-focused,
+html[data-netsuite-theme="enabled"] .ns-widget-action-group-item-disabled,
+html[data-netsuite-theme="enabled"] .ns-portlet-header,
+html[data-netsuite-theme="enabled"] .ns-portlet-footer,
+html[data-netsuite-theme="enabled"] .ns-portlet-body,
+html[data-netsuite-theme="enabled"] .ns-portlet-title,
+html[data-netsuite-theme="enabled"] .ns-portlet-subtitle,
+html[data-netsuite-theme="enabled"] .ns-portlet-description,
+html[data-netsuite-theme="enabled"] .ns-portlet-action,
+html[data-netsuite-theme="enabled"] .ns-portlet-action-icon,
+html[data-netsuite-theme="enabled"] .ns-portlet-action-text,
+html[data-netsuite-theme="enabled"] .ns-portlet-action-badge,
+html[data-netsuite-theme="enabled"] .ns-portlet-action-arrow,
+html[data-netsuite-theme="enabled"] .ns-portlet-action-separator,
+html[data-netsuite-theme="enabled"] .ns-portlet-action-group,
+html[data-netsuite-theme="enabled"] .ns-portlet-action-group-title,
+html[data-netsuite-theme="enabled"] .ns-portlet-action-group-content,
+html[data-netsuite-theme="enabled"] .ns-portlet-action-group-header,
+html[data-netsuite-theme="enabled"] .ns-portlet-action-group-footer,
+html[data-netsuite-theme="enabled"] .ns-portlet-action-group-separator,
+html[data-netsuite-theme="enabled"] .ns-portlet-action-group-item,
+html[data-netsuite-theme="enabled"] .ns-portlet-action-group-item-active,
+html[data-netsuite-theme="enabled"] .ns-portlet-action-group-item-hover,
+html[data-netsuite-theme="enabled"] .ns-portlet-action-group-item-selected,
+html[data-netsuite-theme="enabled"] .ns-portlet-action-group-item-focused,
+html[data-netsuite-theme="enabled"] .ns-portlet-action-group-item-disabled {
+  background-color: var(--ns-card-bg) !important;
+  color: var(--ns-text) !important;
+  border-color: var(--ns-card-border) !important;
+}
+
+/* ============================================================
+   INPUTS / FORMULARIOS
+   ============================================================ */
+html[data-netsuite-theme="enabled"] input,
+html[data-netsuite-theme="enabled"] textarea,
+html[data-netsuite-theme="enabled"] select,
+html[data-netsuite-theme="enabled"] .ns-input,
+html[data-netsuite-theme="enabled"] .ns-textarea,
+html[data-netsuite-theme="enabled"] .ns-select,
+html[data-netsuite-theme="enabled"] .ns-dropdown,
+html[data-netsuite-theme="enabled"] .ns-combobox,
+html[data-netsuite-theme="enabled"] .ns-picker,
+html[data-netsuite-theme="enabled"] .ns-date-picker,
+html[data-netsuite-theme="enabled"] .ns-time-picker,
+html[data-netsuite-theme="enabled"] .ns-color-picker,
+html[data-netsuite-theme="enabled"] .ns-file-picker,
+html[data-netsuite-theme="enabled"] .ns-search-input,
+html[data-netsuite-theme="enabled"] .ns-filter-input,
+html[data-netsuite-theme="enabled"] .ns-sort-input,
+html[data-netsuite-theme="enabled"] .ns-form-input,
+html[data-netsuite-theme="enabled"] .ns-form-textarea,
+html[data-netsuite-theme="enabled"] .ns-form-select,
+html[data-netsuite-theme="enabled"] .ns-form-dropdown,
+html[data-netsuite-theme="enabled"] .ns-form-combobox,
+html[data-netsuite-theme="enabled"] .ns-form-picker,
+html[data-netsuite-theme="enabled"] .ns-form-date-picker,
+html[data-netsuite-theme="enabled"] .ns-form-time-picker,
+html[data-netsuite-theme="enabled"] .ns-form-color-picker,
+html[data-netsuite-theme="enabled"] .ns-form-file-picker,
+html[data-netsuite-theme="enabled"] .ns-form-search-input,
+html[data-netsuite-theme="enabled"] .ns-form-filter-input,
+html[data-netsuite-theme="enabled"] .ns-form-sort-input,
+html[data-netsuite-theme="enabled"] .uir-field-input,
+html[data-netsuite-theme="enabled"] .uir-field-textarea,
+html[data-netsuite-theme="enabled"] .uir-field-select,
+html[data-netsuite-theme="enabled"] .uir-field-dropdown,
+html[data-netsuite-theme="enabled"] .uir-field-combobox,
+html[data-netsuite-theme="enabled"] .uir-field-picker,
+html[data-netsuite-theme="enabled"] .uir-field-date-picker,
+html[data-netsuite-theme="enabled"] .uir-field-time-picker,
+html[data-netsuite-theme="enabled"] .uir-field-color-picker,
+html[data-netsuite-theme="enabled"] .uir-field-file-picker,
+html[data-netsuite-theme="enabled"] .uir-field-search-input,
+html[data-netsuite-theme="enabled"] .uir-field-filter-input,
+html[data-netsuite-theme="enabled"] .uir-field-sort-input {
+  background-color: var(--ns-input-bg) !important;
+  color: var(--ns-text) !important;
+  border-color: var(--ns-input-border) !important;
+  font-size: var(--ns-font-size) !important;
+}
+
+/* ============================================================
+   BOTONES
+   ============================================================ */
+html[data-netsuite-theme="enabled"] button,
+html[data-netsuite-theme="enabled"] .ns-button,
+html[data-netsuite-theme="enabled"] .ns-btn,
+html[data-netsuite-theme="enabled"] .ns-action-button,
+html[data-netsuite-theme="enabled"] .ns-primary-button,
+html[data-netsuite-theme="enabled"] .ns-secondary-button,
+html[data-netsuite-theme="enabled"] .ns-tertiary-button,
+html[data-netsuite-theme="enabled"] .ns-ghost-button,
+html[data-netsuite-theme="enabled"] .ns-icon-button,
+html[data-netsuite-theme="enabled"] .ns-text-button,
+html[data-netsuite-theme="enabled"] .ns-link-button,
+html[data-netsuite-theme="enabled"] .ns-menu-button,
+html[data-netsuite-theme="enabled"] .ns-dropdown-button,
+html[data-netsuite-theme="enabled"] .ns-split-button,
+html[data-netsuite-theme="enabled"] .ns-button-group,
+html[data-netsuite-theme="enabled"] .ns-button-group-item,
+html[data-netsuite-theme="enabled"] .ns-button-group-item-active,
+html[data-netsuite-theme="enabled"] .ns-button-group-item-hover,
+html[data-netsuite-theme="enabled"] .ns-button-group-item-selected,
+html[data-netsuite-theme="enabled"] .ns-button-group-item-focused,
+html[data-netsuite-theme="enabled"] .ns-button-group-item-disabled,
+html[data-netsuite-theme="enabled"] .uir-button,
+html[data-netsuite-theme="enabled"] .uir-btn,
+html[data-netsuite-theme="enabled"] .uir-action-button,
+html[data-netsuite-theme="enabled"] .uir-primary-button,
+html[data-netsuite-theme="enabled"] .uir-secondary-button,
+html[data-netsuite-theme="enabled"] .uir-tertiary-button,
+html[data-netsuite-theme="enabled"] .uir-ghost-button,
+html[data-netsuite-theme="enabled"] .uir-icon-button,
+html[data-netsuite-theme="enabled"] .uir-text-button,
+html[data-netsuite-theme="enabled"] .uir-link-button,
+html[data-netsuite-theme="enabled"] .uir-menu-button,
+html[data-netsuite-theme="enabled"] .uir-dropdown-button,
+html[data-netsuite-theme="enabled"] .uir-split-button,
+html[data-netsuite-theme="enabled"] .uir-button-group,
+html[data-netsuite-theme="enabled"] .uir-button-group-item,
+html[data-netsuite-theme="enabled"] .uir-button-group-item-active,
+html[data-netsuite-theme="enabled"] .uir-button-group-item-hover,
+html[data-netsuite-theme="enabled"] .uir-button-group-item-selected,
+html[data-netsuite-theme="enabled"] .uir-button-group-item-focused,
+html[data-netsuite-theme="enabled"] .uir-button-group-item-disabled {
+  background-color: var(--ns-accent) !important;
+  color: #ffffff !important;
+  border-color: var(--ns-accent) !important;
+}
+
+html[data-netsuite-theme="enabled"] button:hover,
+html[data-netsuite-theme="enabled"] .ns-button:hover,
+html[data-netsuite-theme="enabled"] .ns-btn:hover,
+html[data-netsuite-theme="enabled"] .ns-action-button:hover,
+html[data-netsuite-theme="enabled"] .ns-primary-button:hover,
+html[data-netsuite-theme="enabled"] .ns-secondary-button:hover,
+html[data-netsuite-theme="enabled"] .ns-tertiary-button:hover,
+html[data-netsuite-theme="enabled"] .ns-ghost-button:hover,
+html[data-netsuite-theme="enabled"] .ns-icon-button:hover,
+html[data-netsuite-theme="enabled"] .ns-text-button:hover,
+html[data-netsuite-theme="enabled"] .ns-link-button:hover,
+html[data-netsuite-theme="enabled"] .ns-menu-button:hover,
+html[data-netsuite-theme="enabled"] .ns-dropdown-button:hover,
+html[data-netsuite-theme="enabled"] .ns-split-button:hover,
+html[data-netsuite-theme="enabled"] .ns-button-group-item:hover,
+html[data-netsuite-theme="enabled"] .uir-button:hover,
+html[data-netsuite-theme="enabled"] .uir-btn:hover,
+html[data-netsuite-theme="enabled"] .uir-action-button:hover,
+html[data-netsuite-theme="enabled"] .uir-primary-button:hover,
+html[data-netsuite-theme="enabled"] .uir-secondary-button:hover,
+html[data-netsuite-theme="enabled"] .uir-tertiary-button:hover,
+html[data-netsuite-theme="enabled"] .uir-ghost-button:hover,
+html[data-netsuite-theme="enabled"] .uir-icon-button:hover,
+html[data-netsuite-theme="enabled"] .uir-text-button:hover,
+html[data-netsuite-theme="enabled"] .uir-link-button:hover,
+html[data-netsuite-theme="enabled"] .uir-menu-button:hover,
+html[data-netsuite-theme="enabled"] .uir-dropdown-button:hover,
+html[data-netsuite-theme="enabled"] .uir-split-button:hover,
+html[data-netsuite-theme="enabled"] .uir-button-group-item:hover {
+  background-color: var(--ns-accent-hover) !important;
+  border-color: var(--ns-accent-hover) !important;
+}
+
+/* Botones secundarios / ghost */
+html[data-netsuite-theme="enabled"] .ns-secondary-button,
+html[data-netsuite-theme="enabled"] .ns-ghost-button,
+html[data-netsuite-theme="enabled"] .ns-text-button,
+html[data-netsuite-theme="enabled"] .ns-link-button,
+html[data-netsuite-theme="enabled"] .uir-secondary-button,
+html[data-netsuite-theme="enabled"] .uir-ghost-button,
+html[data-netsuite-theme="enabled"] .uir-text-button,
+html[data-netsuite-theme="enabled"] .uir-link-button {
+  background-color: transparent !important;
+  color: var(--ns-accent) !important;
+  border-color: var(--ns-input-border) !important;
+}
+
+html[data-netsuite-theme="enabled"] .ns-secondary-button:hover,
+html[data-netsuite-theme="enabled"] .ns-ghost-button:hover,
+html[data-netsuite-theme="enabled"] .ns-text-button:hover,
+html[data-netsuite-theme="enabled"] .ns-link-button:hover,
+html[data-netsuite-theme="enabled"] .uir-secondary-button:hover,
+html[data-netsuite-theme="enabled"] .uir-ghost-button:hover,
+html[data-netsuite-theme="enabled"] .uir-text-button:hover,
+html[data-netsuite-theme="enabled"] .uir-link-button:hover {
+  background-color: rgba(99, 102, 241, 0.1) !important;
+  color: var(--ns-accent-hover) !important;
+}
+
+/* ============================================================
+   TABLAS / LISTAS
+   ============================================================ */
+html[data-netsuite-theme="enabled"] table,
+html[data-netsuite-theme="enabled"] .ns-table,
+html[data-netsuite-theme="enabled"] .ns-data-table,
+html[data-netsuite-theme="enabled"] .ns-list-table,
+html[data-netsuite-theme="enabled"] .ns-grid-table,
+html[data-netsuite-theme="enabled"] .ns-report-table,
+html[data-netsuite-theme="enabled"] .ns-search-table,
+html[data-netsuite-theme="enabled"] .ns-result-table,
+html[data-netsuite-theme="enabled"] .ns-edit-table,
+html[data-netsuite-theme="enabled"] .ns-view-table,
+html[data-netsuite-theme="enabled"] .ns-summary-table,
+html[data-netsuite-theme="enabled"] .ns-detail-table,
+html[data-netsuite-theme="enabled"] .ns-sublist-table,
+html[data-netsuite-theme="enabled"] .ns-machine-table,
+html[data-netsuite-theme="enabled"] .uir-table,
+html[data-netsuite-theme="enabled"] .uir-data-table,
+html[data-netsuite-theme="enabled"] .uir-list-table,
+html[data-netsuite-theme="enabled"] .uir-grid-table,
+html[data-netsuite-theme="enabled"] .uir-report-table,
+html[data-netsuite-theme="enabled"] .uir-search-table,
+html[data-netsuite-theme="enabled"] .uir-result-table,
+html[data-netsuite-theme="enabled"] .uir-edit-table,
+html[data-netsuite-theme="enabled"] .uir-view-table,
+html[data-netsuite-theme="enabled"] .uir-summary-table,
+html[data-netsuite-theme="enabled"] .uir-detail-table,
+html[data-netsuite-theme="enabled"] .uir-sublist-table,
+html[data-netsuite-theme="enabled"] .uir-machine-table {
+  background-color: var(--ns-bg) !important;
+  color: var(--ns-text) !important;
+  border-color: var(--ns-card-border) !important;
+}
+
+html[data-netsuite-theme="enabled"] th,
+html[data-netsuite-theme="enabled"] .ns-table-header,
+html[data-netsuite-theme="enabled"] .ns-table-header-cell,
+html[data-netsuite-theme="enabled"] .ns-list-header,
+html[data-netsuite-theme="enabled"] .ns-list-header-cell,
+html[data-netsuite-theme="enabled"] .ns-grid-header,
+html[data-netsuite-theme="enabled"] .ns-grid-header-cell,
+html[data-netsuite-theme="enabled"] .ns-report-header,
+html[data-netsuite-theme="enabled"] .ns-report-header-cell,
+html[data-netsuite-theme="enabled"] .ns-search-header,
+html[data-netsuite-theme="enabled"] .ns-search-header-cell,
+html[data-netsuite-theme="enabled"] .ns-result-header,
+html[data-netsuite-theme="enabled"] .ns-result-header-cell,
+html[data-netsuite-theme="enabled"] .ns-edit-header,
+html[data-netsuite-theme="enabled"] .ns-edit-header-cell,
+html[data-netsuite-theme="enabled"] .ns-view-header,
+html[data-netsuite-theme="enabled"] .ns-view-header-cell,
+html[data-netsuite-theme="enabled"] .ns-summary-header,
+html[data-netsuite-theme="enabled"] .ns-summary-header-cell,
+html[data-netsuite-theme="enabled"] .ns-detail-header,
+html[data-netsuite-theme="enabled"] .ns-detail-header-cell,
+html[data-netsuite-theme="enabled"] .ns-sublist-header-cell,
+html[data-netsuite-theme="enabled"] .ns-machine-header-cell,
+html[data-netsuite-theme="enabled"] .uir-table-header,
+html[data-netsuite-theme="enabled"] .uir-table-header-cell,
+html[data-netsuite-theme="enabled"] .uir-list-header,
+html[data-netsuite-theme="enabled"] .uir-list-header-cell,
+html[data-netsuite-theme="enabled"] .uir-grid-header,
+html[data-netsuite-theme="enabled"] .uir-grid-header-cell,
+html[data-netsuite-theme="enabled"] .uir-report-header,
+html[data-netsuite-theme="enabled"] .uir-report-header-cell,
+html[data-netsuite-theme="enabled"] .uir-search-header,
+html[data-netsuite-theme="enabled"] .uir-search-header-cell,
+html[data-netsuite-theme="enabled"] .uir-result-header,
+html[data-netsuite-theme="enabled"] .uir-result-header-cell,
+html[data-netsuite-theme="enabled"] .uir-edit-header,
+html[data-netsuite-theme="enabled"] .uir-edit-header-cell,
+html[data-netsuite-theme="enabled"] .uir-view-header,
+html[data-netsuite-theme="enabled"] .uir-view-header-cell,
+html[data-netsuite-theme="enabled"] .uir-summary-header,
+html[data-netsuite-theme="enabled"] .uir-summary-header-cell,
+html[data-netsuite-theme="enabled"] .uir-detail-header,
+html[data-netsuite-theme="enabled"] .uir-detail-header-cell,
+html[data-netsuite-theme="enabled"] .uir-sublist-header-cell,
+html[data-netsuite-theme="enabled"] .uir-machine-header-cell {
+  background-color: var(--ns-card-bg) !important;
+  color: var(--ns-text) !important;
+  border-color: var(--ns-card-border) !important;
+}
+
+html[data-netsuite-theme="enabled"] tr:nth-child(even),
+html[data-netsuite-theme="enabled"] .ns-table-row-even,
+html[data-netsuite-theme="enabled"] .ns-list-row-even,
+html[data-netsuite-theme="enabled"] .ns-grid-row-even,
+html[data-netsuite-theme="enabled"] .ns-report-row-even,
+html[data-netsuite-theme="enabled"] .ns-search-row-even,
+html[data-netsuite-theme="enabled"] .ns-result-row-even,
+html[data-netsuite-theme="enabled"] .ns-edit-row-even,
+html[data-netsuite-theme="enabled"] .ns-view-row-even,
+html[data-netsuite-theme="enabled"] .ns-summary-row-even,
+html[data-netsuite-theme="enabled"] .ns-detail-row-even,
+html[data-netsuite-theme="enabled"] .ns-sublist-row-even,
+html[data-netsuite-theme="enabled"] .ns-machine-row-even,
+html[data-netsuite-theme="enabled"] .uir-table-row-even,
+html[data-netsuite-theme="enabled"] .uir-list-row-even,
+html[data-netsuite-theme="enabled"] .uir-grid-row-even,
+html[data-netsuite-theme="enabled"] .uir-report-row-even,
+html[data-netsuite-theme="enabled"] .uir-search-row-even,
+html[data-netsuite-theme="enabled"] .uir-result-row-even,
+html[data-netsuite-theme="enabled"] .uir-edit-row-even,
+html[data-netsuite-theme="enabled"] .uir-view-row-even,
+html[data-netsuite-theme="enabled"] .uir-summary-row-even,
+html[data-netsuite-theme="enabled"] .uir-detail-row-even,
+html[data-netsuite-theme="enabled"] .uir-sublist-row-even,
+html[data-netsuite-theme="enabled"] .uir-machine-row-even {
+  background-color: rgba(30, 30, 34, 0.4) !important;
+}
+
+html[data-netsuite-theme="enabled"] tr:hover,
+html[data-netsuite-theme="enabled"] .ns-table-row-hover,
+html[data-netsuite-theme="enabled"] .ns-list-row-hover,
+html[data-netsuite-theme="enabled"] .ns-grid-row-hover,
+html[data-netsuite-theme="enabled"] .ns-report-row-hover,
+html[data-netsuite-theme="enabled"] .ns-search-row-hover,
+html[data-netsuite-theme="enabled"] .ns-result-row-hover,
+html[data-netsuite-theme="enabled"] .ns-edit-row-hover,
+html[data-netsuite-theme="enabled"] .ns-view-row-hover,
+html[data-netsuite-theme="enabled"] .ns-summary-row-hover,
+html[data-netsuite-theme="enabled"] .ns-detail-row-hover,
+html[data-netsuite-theme="enabled"] .ns-sublist-row-hover,
+html[data-netsuite-theme="enabled"] .ns-machine-row-hover,
+html[data-netsuite-theme="enabled"] .uir-table-row-hover,
+html[data-netsuite-theme="enabled"] .uir-list-row-hover,
+html[data-netsuite-theme="enabled"] .uir-grid-row-hover,
+html[data-netsuite-theme="enabled"] .uir-report-row-hover,
+html[data-netsuite-theme="enabled"] .uir-search-row-hover,
+html[data-netsuite-theme="enabled"] .uir-result-row-hover,
+html[data-netsuite-theme="enabled"] .uir-edit-row-hover,
+html[data-netsuite-theme="enabled"] .uir-view-row-hover,
+html[data-netsuite-theme="enabled"] .uir-summary-row-hover,
+html[data-netsuite-theme="enabled"] .uir-detail-row-hover,
+html[data-netsuite-theme="enabled"] .uir-sublist-row-hover,
+html[data-netsuite-theme="enabled"] .uir-machine-row-hover {
+  background-color: rgba(99, 102, 241, 0.08) !important;
+}
+
+/* ============================================================
+   TABS / PESTAÑAS
+   ============================================================ */
+html[data-netsuite-theme="enabled"] .ns-tab,
+html[data-netsuite-theme="enabled"] .ns-tab-item,
+html[data-netsuite-theme="enabled"] .ns-tab-link,
+html[data-netsuite-theme="enabled"] .ns-tab-button,
+html[data-netsuite-theme="enabled"] .ns-tab-label,
+html[data-netsuite-theme="enabled"] .ns-tab-icon,
+html[data-netsuite-theme="enabled"] .ns-tab-badge,
+html[data-netsuite-theme="enabled"] .ns-tab-arrow,
+html[data-netsuite-theme="enabled"] .ns-tab-separator,
+html[data-netsuite-theme="enabled"] .ns-tab-group,
+html[data-netsuite-theme="enabled"] .ns-tab-group-title,
+html[data-netsuite-theme="enabled"] .ns-tab-group-content,
+html[data-netsuite-theme="enabled"] .ns-tab-group-header,
+html[data-netsuite-theme="enabled"] .ns-tab-group-footer,
+html[data-netsuite-theme="enabled"] .ns-tab-group-separator,
+html[data-netsuite-theme="enabled"] .ns-tab-group-item,
+html[data-netsuite-theme="enabled"] .ns-tab-group-item-active,
+html[data-netsuite-theme="enabled"] .ns-tab-group-item-hover,
+html[data-netsuite-theme="enabled"] .ns-tab-group-item-selected,
+html[data-netsuite-theme="enabled"] .ns-tab-group-item-focused,
+html[data-netsuite-theme="enabled"] .ns-tab-group-item-disabled,
+html[data-netsuite-theme="enabled"] .uir-tab,
+html[data-netsuite-theme="enabled"] .uir-tab-item,
+html[data-netsuite-theme="enabled"] .uir-tab-link,
+html[data-netsuite-theme="enabled"] .uir-tab-button,
+html[data-netsuite-theme="enabled"] .uir-tab-label,
+html[data-netsuite-theme="enabled"] .uir-tab-icon,
+html[data-netsuite-theme="enabled"] .uir-tab-badge,
+html[data-netsuite-theme="enabled"] .uir-tab-arrow,
+html[data-netsuite-theme="enabled"] .uir-tab-separator,
+html[data-netsuite-theme="enabled"] .uir-tab-group,
+html[data-netsuite-theme="enabled"] .uir-tab-group-title,
+html[data-netsuite-theme="enabled"] .uir-tab-group-content,
+html[data-netsuite-theme="enabled"] .uir-tab-group-header,
+html[data-netsuite-theme="enabled"] .uir-tab-group-footer,
+html[data-netsuite-theme="enabled"] .uir-tab-group-separator,
+html[data-netsuite-theme="enabled"] .uir-tab-group-item,
+html[data-netsuite-theme="enabled"] .uir-tab-group-item-active,
+html[data-netsuite-theme="enabled"] .uir-tab-group-item-hover,
+html[data-netsuite-theme="enabled"] .uir-tab-group-item-selected,
+html[data-netsuite-theme="enabled"] .uir-tab-group-item-focused,
+html[data-netsuite-theme="enabled"] .uir-tab-group-item-disabled {
+  background-color: var(--ns-card-bg) !important;
+  color: var(--ns-text-muted) !important;
+  border-color: var(--ns-card-border) !important;
+}
+
+html[data-netsuite-theme="enabled"] .ns-tab-active,
+html[data-netsuite-theme="enabled"] .ns-tab-selected,
+html[data-netsuite-theme="enabled"] .ns-tab-item-active,
+html[data-netsuite-theme="enabled"] .ns-tab-item-selected,
+html[data-netsuite-theme="enabled"] .ns-tab-group-item-active,
+html[data-netsuite-theme="enabled"] .ns-tab-group-item-selected,
+html[data-netsuite-theme="enabled"] .uir-tab-active,
+html[data-netsuite-theme="enabled"] .uir-tab-selected,
+html[data-netsuite-theme="enabled"] .uir-tab-item-active,
+html[data-netsuite-theme="enabled"] .uir-tab-item-selected,
+html[data-netsuite-theme="enabled"] .uir-tab-group-item-active,
+html[data-netsuite-theme="enabled"] .uir-tab-group-item-selected {
+  background-color: var(--ns-bg) !important;
+  color: var(--ns-accent) !important;
+  border-bottom-color: var(--ns-accent) !important;
+}
+
+/* ============================================================
+   LINKS
+   ============================================================ */
+html[data-netsuite-theme="enabled"] a,
+html[data-netsuite-theme="enabled"] .ns-link,
+html[data-netsuite-theme="enabled"] .ns-hyperlink,
+html[data-netsuite-theme="enabled"] .ns-anchor,
+html[data-netsuite-theme="enabled"] .ns-url,
+html[data-netsuite-theme="enabled"] .ns-reference,
+html[data-netsuite-theme="enabled"] .ns-lookup,
+html[data-netsuite-theme="enabled"] .ns-popup,
+html[data-netsuite-theme="enabled"] .ns-popup-link,
+html[data-netsuite-theme="enabled"] .uir-link,
+html[data-netsuite-theme="enabled"] .uir-hyperlink,
+html[data-netsuite-theme="enabled"] .uir-anchor,
+html[data-netsuite-theme="enabled"] .uir-url,
+html[data-netsuite-theme="enabled"] .uir-reference,
+html[data-netsuite-theme="enabled"] .uir-lookup,
+html[data-netsuite-theme="enabled"] .uir-popup,
+html[data-netsuite-theme="enabled"] .uir-popup-link {
+  color: var(--ns-accent) !important;
+}
+
+html[data-netsuite-theme="enabled"] a:hover,
+html[data-netsuite-theme="enabled"] .ns-link:hover,
+html[data-netsuite-theme="enabled"] .ns-hyperlink:hover,
+html[data-netsuite-theme="enabled"] .ns-anchor:hover,
+html[data-netsuite-theme="enabled"] .ns-url:hover,
+html[data-netsuite-theme="enabled"] .ns-reference:hover,
+html[data-netsuite-theme="enabled"] .ns-lookup:hover,
+html[data-netsuite-theme="enabled"] .ns-popup:hover,
+html[data-netsuite-theme="enabled"] .ns-popup-link:hover,
+html[data-netsuite-theme="enabled"] .uir-link:hover,
+html[data-netsuite-theme="enabled"] .uir-hyperlink:hover,
+html[data-netsuite-theme="enabled"] .uir-anchor:hover,
+html[data-netsuite-theme="enabled"] .uir-url:hover,
+html[data-netsuite-theme="enabled"] .uir-reference:hover,
+html[data-netsuite-theme="enabled"] .uir-lookup:hover,
+html[data-netsuite-theme="enabled"] .uir-popup:hover,
+html[data-netsuite-theme="enabled"] .uir-popup-link:hover {
+  color: var(--ns-accent-hover) !important;
+}
+
+/* ============================================================
+   SCROLLBARS
+   ============================================================ */
+html[data-netsuite-theme="enabled"] ::-webkit-scrollbar {
+  width: 10px !important;
+  height: 10px !important;
+}
+
+html[data-netsuite-theme="enabled"] ::-webkit-scrollbar-track {
+  background: var(--ns-bg) !important;
+}
+
+html[data-netsuite-theme="enabled"] ::-webkit-scrollbar-thumb {
+  background: var(--ns-card-border) !important;
+  border-radius: 5px !important;
+}
+
+html[data-netsuite-theme="enabled"] ::-webkit-scrollbar-thumb:hover {
+  background: var(--ns-text-muted) !important;
+}
+
+/* ============================================================
+   HIGH CONTRAST MODE
+   ============================================================ */
+html[data-netsuite-theme="enabled"][data-netsuite-high-contrast="true"] *,
+html[data-netsuite-theme="enabled"][data-netsuite-high-contrast="true"] *::before,
+html[data-netsuite-theme="enabled"][data-netsuite-high-contrast="true"] *::after {
+  border-width: 1px !important;
+  outline-width: 1px !important;
+}
+
+html[data-netsuite-theme="enabled"][data-netsuite-high-contrast="true"] {
+  --ns-bg: #000000 !important;
+  --ns-text: #ffffff !important;
+  --ns-text-muted: #cccccc !important;
+  --ns-card-bg: #0a0a0a !important;
+  --ns-card-border: #333333 !important;
+  --ns-input-bg: #111111 !important;
+  --ns-input-border: #444444 !important;
+}

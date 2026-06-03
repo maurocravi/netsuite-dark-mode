@@ -79,12 +79,12 @@
       success: '#10b981',
       fontSize: parseInt(document.getElementById('range-fontsize').value, 10),
       sidebarSaturation: document.getElementById('toggle-sidebar-sat').checked ? 0.4 : 1,
-      highContrast: document.getElementById('toggle-highcontrast').checked,
-      profiles: {}, // se rellena al cargar
-      autoDark: false,
-      autoDarkStart: '18:00',
-      autoDarkEnd: '06:00'
+      highContrast: document.getElementById('toggle-highcontrast').checked
     };
+  }
+
+  function mergeInputsIntoTheme(baseTheme) {
+    return { ...baseTheme, ...getThemeFromInputs() };
   }
 
   function setInputsFromTheme(theme) {
@@ -253,11 +253,7 @@
 
   async function onChange() {
     const theme = await loadTheme();
-    const updated = getThemeFromInputs();
-    updated.profiles = theme.profiles || {};
-    updated.autoDark = theme.autoDark;
-    updated.autoDarkStart = theme.autoDarkStart;
-    updated.autoDarkEnd = theme.autoDarkEnd;
+    const updated = mergeInputsIntoTheme(theme);
     await saveTheme(updated);
   }
 

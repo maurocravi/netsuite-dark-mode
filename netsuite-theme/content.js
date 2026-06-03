@@ -30,9 +30,7 @@
     autoDarkEnd: '06:00'
   };
 
-  function getBrowser() {
-    return typeof browser !== 'undefined' && browser.storage ? browser : chrome;
-  }
+  const browserApi = typeof browser !== 'undefined' && browser.storage ? browser : chrome;
 
   function buildCSS(theme) {
     return `
@@ -112,7 +110,6 @@
   }
 
   function init() {
-    const browserApi = getBrowser();
     browserApi.storage.sync.get(STORAGE_KEY, (result) => {
       let theme = result[STORAGE_KEY];
       if (!theme) {
@@ -129,7 +126,6 @@
   }
 
   // Escuchar cambios en tiempo real desde el popup
-  const browserApi = getBrowser();
   browserApi.storage.onChanged.addListener((changes, area) => {
     if (area !== 'sync') return;
     if (!changes[STORAGE_KEY]) return;
